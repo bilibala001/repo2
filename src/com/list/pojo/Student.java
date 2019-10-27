@@ -11,7 +11,7 @@ public class Student implements Serializable/*, Comparable<Student>*/ {
     private String name;
     private int age;
     private String address;
-
+    // 空参构造函数
     public Student() {
     }
 
