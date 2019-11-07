@@ -26,6 +26,7 @@ public class Entrance implements Runnable {
     @Override
     public void run() {
         while (!cancled){
+            // number加不加sych好像都一样，是在自己的线程内部。 为了扩展性，还是加上？
             synchronized (this){
                 number++;
             }
@@ -43,7 +44,7 @@ public class Entrance implements Runnable {
     public synchronized int getValue(){
         return number;
     }
-    // 这个不用加同步吗？ static方法可以保证可见性吗？
+    // 按照设计到这里 线程就结束了，所以不需要同步，至于static，是为了直接访问，不用新建对象。
     public static int getTotalCount(){
         return count.getCount();
     }

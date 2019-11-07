@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @author ng
  * @date 2019/11/6-17:32
  */
-public class TestAfterWait {
+public class AfterWait {
     public static void main(String[] args) {
         General general = new General(1);
         ExecutorService exec = Executors.newFixedThreadPool(6);
