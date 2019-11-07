@@ -42,25 +42,25 @@ public class General {
     // notify方法：
     public synchronized void m1wait() throws InterruptedException {
         while (target % 3 + 1 != 1) {
-            System.out.println("m1.wait前**************** target = " + target);
+          //  System.out.println("m1.wait前**************** target = " + target);
             wait();
-            System.out.println("m1.wait后。。。 target = " + target);
+            //System.out.println("m1.wait后。。。 target = " + target);
         }
     }
 
     public synchronized void m2wait() throws InterruptedException {
         while (target % 3 + 1 != 2) {
-            System.out.println("m2.wait前**************** target = " + target);
+          //  System.out.println("m2.wait前**************** target = " + target);
             wait();
-            System.out.println("m2.wait后。。。 target = " + target);
+            //System.out.println("m2.wait后。。。 target = " + target);
         }
     }
 
     public synchronized void m3wait() throws InterruptedException {
         while (target % 3 + 1 != 3) {
-            System.out.println("m3.wait前**************** target = " + target);
+          //  System.out.println("m3.wait前**************** target = " + target);
             wait();
-            System.out.println("m3.wait后。。。 target = " + target);
+            //System.out.println("m3.wait后。。。 target = " + target);
         }
     }
 
