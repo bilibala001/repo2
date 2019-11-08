@@ -19,3 +19,4 @@ wait:
         的区别。
 notify:
     业务代码和改变条件 写在notify前面
+    只唤醒和自己的锁(synchroized锁)相同的线程中的wait
