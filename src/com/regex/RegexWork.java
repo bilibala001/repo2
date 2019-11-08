@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * @author ng
  * @date 2019/11/7-15:46
  */
-public class MatchRepeat {
+public class RegexWork {
     public static void main(String[] args) {
         String s = "hello , where you going";
         // groupAnaly(s);
@@ -18,7 +18,6 @@ public class MatchRepeat {
     }
 
     /**
-     *
      * 把aabbbcdeeee 转为a2b3cde4这样的格式。
      * 正则表达式：(.)\1*
      *  \1表示在正则表达式中引用 第一组。  \\1
