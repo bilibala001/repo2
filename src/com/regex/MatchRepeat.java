@@ -21,7 +21,7 @@ public class MatchRepeat {
      * 把aabbbcdeeee 转为a2b3cde4这样的格式。
      * 正则表达式：(.)\1*
      *  \1表示在正则表达式中引用 第一组。  \\1
-     *  $1表示在正则表达式外引用 第一组。  "$1"
+     *  $1表示在正则表达式外引用 第一组。  "$1" matcher.replaceAll("$1"); 去重
      * @param s2
      * @param regex
      */
@@ -41,7 +41,7 @@ public class MatchRepeat {
 
     /**
      * "hello , where you going"
-     * 测试去掉（(＼\s+)）的结果：包含going.说明了实际匹配过程中，
+     * 测试 去掉（(＼\s+)）的结果：包含going.说明了实际匹配过程中，
      * 先匹配的是(\S+)(\s+) , 再截取(\S+)的部分，而不是匹配的(\S+)。
      * 可以看过只有一个Regex表达式，就是\S+\s+。
      * 即：先匹配，再截取。
