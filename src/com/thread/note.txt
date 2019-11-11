@@ -1,0 +1,22 @@
+写wait和notify时遇到不会：
+    java编程思想4第1191页：MutiLock
+    在看书的时候遇到一个普通类，有2个synchronized方法，这2个方法可以称作任务。
+    线程可以只是一个 ()->instance.method();
+什么是线程：
+    线程本身并不执行自身代码，它是任务的执行载体。
+    是将要执行的一段代码，在run里面。
+    关注点是：线程要执行什么任务。
+IllegalMonitorStateException:
+    没有在同步代码块中调用wait或者notify导致的。是运行期异常。
+锁：
+    要理解在同一个对象上获得锁，意味着从同一个生产者或者消费者资源获取锁：即共享资源的锁,不是线程的锁。
+wait:
+    wait()必须要写在while循环里面，一般run(){while(){ while(condition) wait() }}
+    被唤醒后，从wait()后面开始执行，如果wait()后面没有代码，因为while会再次判断条件是否成立。所以wait的循环
+    里面不适合写其他代码。
+    注意synchronized(..){while(cond) wait}    正确
+        while(cond){synchronized(..) wait}    错误
+        的区别!
+notify:
+    业务代码和改变条件 写在notify前面
+    只唤醒和自己的锁(synchroized锁)相同的线程中的wait
