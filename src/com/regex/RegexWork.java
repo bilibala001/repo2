@@ -1,5 +1,7 @@
 package com.regex;
 
+import org.junit.Test;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,8 +22,9 @@ public class RegexWork {
     /**
      * 把aabbbcdeeee 转为a2b3cde4这样的格式。
      * 正则表达式：(.)\1*
-     *  \1表示在正则表达式中引用 第一组。  \\1
-     *  $1表示在正则表达式外引用 第一组。  "$1" matcher.replaceAll("$1"); 去重
+     * \1表示在正则表达式中引用 第一组。  \\1
+     * $1表示在正则表达式外引用 第一组。  "$1" matcher.replaceAll("$1"); 去重
+     *
      * @param s2
      * @param regex
      */
@@ -30,9 +33,9 @@ public class RegexWork {
         StringBuilder sb = new StringBuilder();
         while (matcher.find()) {
             String str = matcher.group();
-            if(str.length()==1){
+            if (str.length() == 1) {
                 sb.append(str.charAt(0));
-            }else {
+            } else {
                 sb.append(str.charAt(0)).append(str.length());
             }
         }
@@ -54,5 +57,9 @@ public class RegexWork {
         Matcher matcher = pattern.matcher(s);
         while (matcher.find())
             System.out.println(matcher.group(1));
+    }
+    @Test
+    public void fn1(){
+        groupAnaly("hello , where you going");
     }
 }
