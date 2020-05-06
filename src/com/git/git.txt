@@ -1,15 +1,19 @@
 idea配置远程仓库：VCS-->GIT-->Remote
+    如果文件是灰色，那么就是被忽略了。
 alias:
-
+    $ git config --global alias.co checkout
+    $ git config --global alias.br branch
+    $ git config --global alias.ci commit
+    $ git config --global alias.st status
 基本命令：
     add commit；add .;添加全部到stage
 stage:
     撤销已暂存.
         撤销所有 git reset HEAD -- . (有.)
         撤销具体 git reset HEAD --  filename
-        从缓存删除文件 git rm -cached filepath
+        从缓存删除文件 git rm -cached filepath 。文件一旦commit后，不想再追踪了，就用这个。
             git rm --cached 删除的是追踪状态，而不是物理文件；
-            git rm 是忽略，删除物理文件。
+            git rm 是忽略缓存，删除物理文件。
 本地分支：
     增、删 git branch brname; git branch -d brname;
     删除文件
@@ -17,4 +21,7 @@ stage:
     添加 git remote add [shortname] [url]
     删除 git remote rm  [shortname]
 远程分支：
+    添加远程分支:
     删除文件
+    推送 git push remoteName branchName
+    删除远程分支 git push [remotename] --delete branchname

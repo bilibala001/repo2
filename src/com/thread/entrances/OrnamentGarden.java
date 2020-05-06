@@ -14,6 +14,7 @@ public class OrnamentGarden {
         for (int i = 0; i < 5; i++) {
             exec.execute(new Entrance(i));
         }
+        // 主线程等待3S，再关闭每个entrance。 虽然有多个Entrance对象，但是cancle方法是static
         TimeUnit.SECONDS.sleep(3);
         Entrance.cancle();
         exec.shutdown();

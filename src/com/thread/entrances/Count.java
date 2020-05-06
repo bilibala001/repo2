@@ -12,6 +12,7 @@ public class Count {
 
     // setter
     public synchronized int increment(){
+        // 操作count副本，再赋值给count
         int temp = count;
         if(random.nextBoolean()){
             Thread.yield();}

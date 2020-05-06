@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class ArraySort {
     public static void main(String[] args) {
-        int[] arr = {3, 2, 5, 66, 6, 77, 44, -23, -4, 100, 99};
+        int[] arr = {112, 2, 5, 66, 6, 77, 44, -23, -4, 100, 99};
         bubboSort(arr);
 
         System.out.println(Arrays.toString(arr));

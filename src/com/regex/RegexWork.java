@@ -56,7 +56,7 @@ public class RegexWork {
         Pattern pattern = Pattern.compile(reg);
         Matcher matcher = pattern.matcher(s);
         while (matcher.find())
-            System.out.println(matcher.group(1));
+            System.out.print(matcher.group(1));
     }
     @Test
     public void fn1(){

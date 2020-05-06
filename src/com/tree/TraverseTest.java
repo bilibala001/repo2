@@ -10,10 +10,64 @@ import com.sun.org.apache.xpath.internal.operations.Mod;
  * 后序遍历：左子树->右子树->根节点（左->右->根）
  */
 public class TraverseTest {
+    /**
+     * 不要按ctrl+shift+f格式化
+     *                  0
+     *             /        \
+     *           a           b
+     *          / \         /  \
+     *        c    d       e    f
+     *      /   \  / \           \
+     *     g    h  i  j            n
+     *              \
+     *               t
+     *                \
+     *                 z
+     *
+     * @return
+     */
+    static Node initTree() {
+        Node root = new Node('0');
+        Node a = new Node('a');
+        Node b = new Node('b');
+        Node c = new Node('c');
+        Node d = new Node('d');
+        Node e = new Node('e');
+        Node f = new Node('f');
+        Node g = new Node('g');
+        Node h = new Node('h');
+        Node i = new Node('i');
+        Node j = new Node('j');
+        Node n = new Node('n');
+        //为了测试depth；
+        Node t = new Node('t');
+        Node z = new Node('z');
+
+        root.leftchild = a;
+        root.rightchild = b;
+        a.leftchild = c;
+        a.rightchild = d;
+        b.leftchild = e;
+        b.rightchild = f;
+        c.leftchild = g;
+        c.rightchild = h;
+        d.leftchild = i;
+        d.rightchild = j;
+        f.rightchild = n;
+        i.rightchild = t;
+        t.rightchild = z;
+        return root;
+    }
     public static void main(String[] args) {
         Node root = initTree();
 
         preTraverse(root);
+        Runtime runtime =Runtime.getRuntime();
+        long l1 = runtime.freeMemory();
+        long l2 = runtime.maxMemory();
+        /*long totalMemory = runtime.totalMemory();
+        System.out.println(l1+"\t"+l2);
+        System.out.println(totalMemory);*/
 //        midTraverse(root);
 //        postTraverse(root);
 
@@ -30,6 +84,7 @@ public class TraverseTest {
         //
         int i = getMaxLengthBewteenTwoNode(node);
         System.out.print(node);
+
         System.out.print(i + " ");
     }
 
@@ -85,7 +140,6 @@ public class TraverseTest {
             postTraverse(mid.rightchild);
             handleNode(mid);
         }
-        return;
     }
 
     /**
@@ -99,7 +153,6 @@ public class TraverseTest {
             handleNode(mid);
             midTraverse(mid.rightchild);
         }
-        return;
     }
 
     /**
@@ -110,63 +163,17 @@ public class TraverseTest {
      */
     private static void preTraverse(Node mid) {
         Node left, right;
+        if(mid ==null) {
+            return;
+        }
         handleNode(mid);
-        ;
         if ((left = mid.leftchild) != null) {
             preTraverse(left);
         }
         if ((right = mid.rightchild) != null) {
             preTraverse(right);
         }
-        return;
     }
 
-    /**
-     * 不要按ctrl+shift+f格式化
-     *                  0
-     *             /        \
-     *           a           b
-     *          / \         /  \
-     *        c    d       e    f
-     *      /   \  / \           \
-     *     g    h  i  j            n
-     *              \
-     *               t
-     *                \
-     *                 z
-     *
-     * @return
-     */
-    static Node initTree() {
-        Node root = new Node('0');
-        Node a = new Node('a');
-        Node b = new Node('b');
-        Node c = new Node('c');
-        Node d = new Node('d');
-        Node e = new Node('e');
-        Node f = new Node('f');
-        Node g = new Node('g');
-        Node h = new Node('h');
-        Node i = new Node('i');
-        Node j = new Node('j');
-        Node n = new Node('n');
-        //为了测试depth；
-        Node t = new Node('t');
-        Node z = new Node('z');
 
-        root.leftchild = a;
-        root.rightchild = b;
-        a.leftchild = c;
-        a.rightchild = d;
-        b.leftchild = e;
-        b.rightchild = f;
-        c.leftchild = g;
-        c.rightchild = h;
-        d.leftchild = i;
-        d.rightchild = j;
-        f.rightchild = n;
-        i.rightchild = t;
-        t.rightchild = z;
-        return root;
-    }
 }
