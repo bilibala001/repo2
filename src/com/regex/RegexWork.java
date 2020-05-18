@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class RegexWork {
     public static void main(String[] args) {
         String s = "hello , where you going";
-         System.out.println("***"+1 + "***");
+         System.out.println("***"+1 + "1111***");
         // groupAnaly(s);
 
         String s2 = "aabbceeefgggggggggg";
