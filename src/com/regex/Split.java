@@ -19,6 +19,7 @@ public class Split {
 
     @Test
     public void fn3() {
+         System.out.println("***"+2 + "***");
         String str = ",a,,b,";
     }
 
