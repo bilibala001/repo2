@@ -15,6 +15,7 @@ public class Copy {
     }
 
     public static void copy(String source,String destination) throws IOException {
+         System.out.println("不用看这行代码");
         File file = new File(source);
         BufferedInputStream br = new BufferedInputStream(new FileInputStream(file));
         byte[] rarr = new byte[1024];
