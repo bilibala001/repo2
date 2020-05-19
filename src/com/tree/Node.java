@@ -25,6 +25,6 @@ public class Node {
 
    @Override
    public String toString() {
-      return  data +" ";
+      return  data +" 远程修改一行 ";
    }
 }
