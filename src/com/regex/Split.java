@@ -40,7 +40,7 @@ public class Split {
        /* for (String s1 : arr) {
             System.out.println("***"+s1 + "***");
         }*/
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr)+"只本地修改");
     }
 
     // 结论：用空字符串分割，会分开每个字符

@@ -85,7 +85,7 @@ public class TraverseTest {
         //
         int i = getMaxLengthBewteenTwoNode(node);
         System.out.print(node);
-
+        System.out.print("双方都修改-本地也修改");
         System.out.print(i + " ");
     }
 
