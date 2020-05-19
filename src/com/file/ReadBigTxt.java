@@ -11,6 +11,7 @@ import java.nio.channels.FileChannel;
 public class ReadBigTxt {
     public static void main(String[] args) throws Exception {
         System.out.println("12:08");
+        System.out.println("12:15");
         final int BUFFER_SIZE = 0x300000;//  缓冲去大小为3M 0x300000
         File f = new File("F:\\logs\\70093.txt");
 /**
