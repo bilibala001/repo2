@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class RegexWork {
     public static void main(String[] args) {
         String s = "hello , where you going";
-         System.out.println("***"+1 + "***");
+         System.out.println("***rrrr"+1 + "***");
         // groupAnaly(s);
 
         String s2 = "aabbceeefgggggggggg";
@@ -56,8 +56,8 @@ public class RegexWork {
         String reg = "(\\S+)(\\s+)";
         Pattern pattern = Pattern.compile(reg);
         Matcher matcher = pattern.matcher(s);
-        while (matcher.find())
-            System.out.print(matcher.group(1));
+        while (matcher.find()){
+            System.out.print(matcher.group(1));}
     }
     @Test
     public void fn1(){
