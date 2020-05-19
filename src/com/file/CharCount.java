@@ -32,7 +32,7 @@ public class CharCount {
                 sum++;
             }
         }
-        System.out.print("--只本地增加");
+
         return sum;
     }
 
