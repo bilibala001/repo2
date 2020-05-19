@@ -16,7 +16,7 @@ public class CharCount {
 //        "E:\temp\notepad\charNum.txt"
         String target = "con";
         int count = new CharCount().getCharCount(target, "E:\\temp\\notepad\\charNum.txt");
-        System.out.println(target+"出现的次数为： "+count);
+        System.out.println(target+"出现的次数是： "+count+"次");
     }
 
     public int getCharCount(String target, String filePath) throws IOException {
