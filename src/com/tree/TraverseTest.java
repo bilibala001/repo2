@@ -60,7 +60,8 @@ public class TraverseTest {
     }
     public static void main(String[] args) {
         Node root = initTree();
-
+         System.out.println("双方都要修改");
+        
         preTraverse(root);
         Runtime runtime =Runtime.getRuntime();
         long l1 = runtime.freeMemory();
