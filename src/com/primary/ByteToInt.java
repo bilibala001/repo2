@@ -16,7 +16,7 @@ public class ByteToInt {
     @Test
     public void fn4() {
         byte b = (byte) 0X8D;
-        int v = b & 0xFF; // 是数字0，不是字母o,0的中间有条线
+        int v = b & 0xFF; // 是数字0，不是字母o,数字0的中间有条线,
         long l1 = b & 0XFFFFFFFF;
         System.out.println(Long.toBinaryString(l1));
     }
